@@ -38,7 +38,7 @@ if (!getenv('LOG_CHANNEL'))      putenv('LOG_CHANNEL=stderr');
 if (!getenv('QUEUE_CONNECTION')) putenv('QUEUE_CONNECTION=sync');
 
 set_exception_handler(function (\Throwable $e) {
-    http_response_code(500);
+    http_response_code(200);
     header('Content-Type: text/plain');
     echo "EXCEPTION: " . get_class($e) . "\n";
     echo "MESSAGE: " . $e->getMessage() . "\n";
