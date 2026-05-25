@@ -45,4 +45,16 @@ $app = require $projectRoot . '/bootstrap/app.php';
 // Override bootstrap cache path ke /tmp
 $app->useBootstrapPath('/tmp/bootstrap');
 
-$app->handleRequest(\Illuminate\Http\Request::capture());
+try {
+    $app->handleRequest(\Illuminate\Http\Request::capture());
+} catch (\Throwable $e) {
+    http_response_code(500);
+    header('Content-Type: text/plain');
+    echo get_class($e) . ': ' . $e->getMessage() . "\n\n";
+    echo $e->getFile() . ':' . $e->getLine() . "\n\n";
+    echo $e->getTraceAsString();
+    if ($prev = $e->getPrevious()) {
+        echo "\n\nCaused by: " . get_class($prev) . ': ' . $prev->getMessage() . "\n";
+        echo $prev->getFile() . ':' . $prev->getLine();
+    }
+}
