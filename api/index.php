@@ -1,16 +1,17 @@
 <?php
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 define('LARAVEL_START', microtime(true));
 
 $projectRoot = dirname(__DIR__);
 $publicPath  = $projectRoot . '/public';
 
-// Fix DOCUMENT_ROOT — vercel-php sets it to api/, override to public/
 $_SERVER['DOCUMENT_ROOT']   = $publicPath;
 $_SERVER['SCRIPT_FILENAME'] = $publicPath . '/index.php';
 $_SERVER['SCRIPT_NAME']     = '/index.php';
 
-// Buat writable dirs di /tmp (satu-satunya yang bisa ditulis di Vercel)
 $tmpStorage = '/tmp/storage';
 foreach ([
     $tmpStorage . '/framework/cache/data',
@@ -24,7 +25,6 @@ foreach ([
     }
 }
 
-// Buat writable bootstrap/cache di /tmp
 $tmpCache = '/tmp/bootstrap/cache';
 if (!is_dir($tmpCache)) {
     mkdir($tmpCache, 0755, true);
@@ -37,24 +37,28 @@ $_SERVER['APP_STORAGE_PATH'] = $tmpStorage;
 if (!getenv('LOG_CHANNEL'))      putenv('LOG_CHANNEL=stderr');
 if (!getenv('QUEUE_CONNECTION')) putenv('QUEUE_CONNECTION=sync');
 
+set_exception_handler(function (\Throwable $e) {
+    http_response_code(500);
+    header('Content-Type: text/plain');
+    echo "EXCEPTION: " . get_class($e) . "\n";
+    echo "MESSAGE: " . $e->getMessage() . "\n";
+    echo "FILE: " . $e->getFile() . ":" . $e->getLine() . "\n\n";
+    echo $e->getTraceAsString();
+    $prev = $e->getPrevious();
+    while ($prev) {
+        echo "\n\nCAUSED BY: " . get_class($prev) . "\n";
+        echo "MESSAGE: " . $prev->getMessage() . "\n";
+        echo "FILE: " . $prev->getFile() . ":" . $prev->getLine() . "\n";
+        $prev = $prev->getPrevious();
+    }
+    exit(1);
+});
+
 require $projectRoot . '/vendor/autoload.php';
 
 /** @var \Illuminate\Foundation\Application $app */
 $app = require $projectRoot . '/bootstrap/app.php';
 
-// Override bootstrap cache path ke /tmp
 $app->useBootstrapPath('/tmp/bootstrap');
 
-try {
-    $app->handleRequest(\Illuminate\Http\Request::capture());
-} catch (\Throwable $e) {
-    http_response_code(500);
-    header('Content-Type: text/plain');
-    echo get_class($e) . ': ' . $e->getMessage() . "\n\n";
-    echo $e->getFile() . ':' . $e->getLine() . "\n\n";
-    echo $e->getTraceAsString();
-    if ($prev = $e->getPrevious()) {
-        echo "\n\nCaused by: " . get_class($prev) . ': ' . $prev->getMessage() . "\n";
-        echo $prev->getFile() . ':' . $prev->getLine();
-    }
-}
+$app->handleRequest(\Illuminate\Http\Request::capture());
