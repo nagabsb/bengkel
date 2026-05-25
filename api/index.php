@@ -24,6 +24,12 @@ foreach ([
     }
 }
 
+// Buat writable bootstrap/cache di /tmp
+$tmpCache = '/tmp/bootstrap/cache';
+if (!is_dir($tmpCache)) {
+    mkdir($tmpCache, 0755, true);
+}
+
 putenv('APP_STORAGE_PATH=' . $tmpStorage);
 $_ENV['APP_STORAGE_PATH']    = $tmpStorage;
 $_SERVER['APP_STORAGE_PATH'] = $tmpStorage;
@@ -35,5 +41,8 @@ require $projectRoot . '/vendor/autoload.php';
 
 /** @var \Illuminate\Foundation\Application $app */
 $app = require $projectRoot . '/bootstrap/app.php';
+
+// Override bootstrap cache path ke /tmp
+$app->useBootstrapPath('/tmp/bootstrap');
 
 $app->handleRequest(\Illuminate\Http\Request::capture());
