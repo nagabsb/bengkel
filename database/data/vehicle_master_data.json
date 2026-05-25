@@ -1,0 +1,44 @@
+{
+    "source": "global-vehicle-master-seed",
+    "brands": [
+        {
+            "name": "Honda",
+            "vehicle_type": "universal",
+            "models": [
+                { "name": "Beat", "vehicle_type": "motor" },
+                { "name": "Vario 160", "vehicle_type": "motor" },
+                { "name": "Brio", "vehicle_type": "mobil" },
+                { "name": "HR-V", "vehicle_type": "mobil" }
+            ]
+        },
+        {
+            "name": "Yamaha",
+            "vehicle_type": "motor",
+            "models": [
+                { "name": "NMAX", "vehicle_type": "motor" },
+                { "name": "Aerox", "vehicle_type": "motor" },
+                { "name": "R15", "vehicle_type": "motor" }
+            ]
+        },
+        {
+            "name": "Toyota",
+            "vehicle_type": "mobil",
+            "models": [
+                { "name": "Avanza", "vehicle_type": "mobil" },
+                { "name": "Innova Zenix", "vehicle_type": "mobil" },
+                { "name": "Fortuner", "vehicle_type": "mobil" }
+            ]
+        },
+        {
+            "name": "Suzuki",
+            "vehicle_type": "universal",
+            "models": [
+                { "name": "Satria F150", "vehicle_type": "motor" },
+                { "name": "Nex II", "vehicle_type": "motor" },
+                { "name": "Ertiga", "vehicle_type": "mobil" },
+                { "name": "XL7", "vehicle_type": "mobil" }
+            ]
+        }
+    ]
+}
+

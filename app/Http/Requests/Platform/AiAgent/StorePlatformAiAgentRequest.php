@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Requests\Platform\AiAgent;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
+class StorePlatformAiAgentRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return (bool) $this->user()?->can('platform.tenants.manage');
+    }
+
+    /**
+     * @return array<string, array<int, \Illuminate\Contracts\Validation\ValidationRule|string>>
+     */
+    public function rules(): array
+    {
+        return [
+            'provider' => ['required', 'string', Rule::in(['openai', 'anthropic', 'gemini', 'groq', 'mistral', 'deepseek', 'kimi'])],
+            'agent_model' => ['required', 'string', 'max:120'],
+            'api_key' => ['nullable', 'string', 'min:10', 'max:4096'],
+            'priority_order' => ['nullable', 'integer', 'min:1', 'max:10000', Rule::unique('platform_ai_settings', 'priority_order')],
+            'monthly_token_limit' => ['nullable', 'integer', 'min:0', 'max:2147483647'],
+            'is_active' => ['nullable', 'boolean'],
+            'is_default' => ['nullable', 'boolean'],
+            'is_failover_enabled' => ['nullable', 'boolean'],
+        ];
+    }
+}
+

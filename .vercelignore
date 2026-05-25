@@ -1,0 +1,11 @@
+node_modules/
+storage/logs/*.log
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+tests/
+phpunit.xml
+.cursor/
+docs/
+bengkel.sql
+.DS_Store

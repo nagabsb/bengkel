@@ -1,0 +1,485 @@
+{
+  "source": "codex-starter-id-global",
+  "generated_at": "2026-03-17T00:00:00+07:00",
+  "brands": [
+    {
+      "name": "Honda",
+      "vehicle_type": "universal",
+      "external_id": "honda",
+      "is_active": true,
+      "models": [
+        { "name": "Beat", "vehicle_type": "motor", "is_active": true },
+        { "name": "Vario 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "Vario 160", "vehicle_type": "motor", "is_active": true },
+        { "name": "Scoopy", "vehicle_type": "motor", "is_active": true },
+        { "name": "PCX 160", "vehicle_type": "motor", "is_active": true },
+        { "name": "ADV 160", "vehicle_type": "motor", "is_active": true },
+        { "name": "Genio", "vehicle_type": "motor", "is_active": true },
+        { "name": "Supra X 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "Revo", "vehicle_type": "motor", "is_active": true },
+        { "name": "CB150R Streetfire", "vehicle_type": "motor", "is_active": true },
+        { "name": "CBR150R", "vehicle_type": "motor", "is_active": true },
+        { "name": "CRF150L", "vehicle_type": "motor", "is_active": true },
+        { "name": "Stylo 160", "vehicle_type": "motor", "is_active": true },
+        { "name": "Brio Satya", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Brio RS", "vehicle_type": "mobil", "is_active": true },
+        { "name": "WR-V", "vehicle_type": "mobil", "is_active": true },
+        { "name": "BR-V", "vehicle_type": "mobil", "is_active": true },
+        { "name": "HR-V", "vehicle_type": "mobil", "is_active": true },
+        { "name": "CR-V", "vehicle_type": "mobil", "is_active": true },
+        { "name": "City Hatchback RS", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Civic RS", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Yamaha",
+      "vehicle_type": "motor",
+      "external_id": "yamaha",
+      "is_active": true,
+      "models": [
+        { "name": "Mio M3", "vehicle_type": "motor", "is_active": true },
+        { "name": "Gear 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "Fino 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "Grand Filano", "vehicle_type": "motor", "is_active": true },
+        { "name": "NMAX", "vehicle_type": "motor", "is_active": true },
+        { "name": "Aerox", "vehicle_type": "motor", "is_active": true },
+        { "name": "Lexi", "vehicle_type": "motor", "is_active": true },
+        { "name": "XMAX", "vehicle_type": "motor", "is_active": true },
+        { "name": "Jupiter Z1", "vehicle_type": "motor", "is_active": true },
+        { "name": "Vega Force", "vehicle_type": "motor", "is_active": true },
+        { "name": "MX King", "vehicle_type": "motor", "is_active": true },
+        { "name": "Vixion", "vehicle_type": "motor", "is_active": true },
+        { "name": "R15", "vehicle_type": "motor", "is_active": true },
+        { "name": "MT-15", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "Suzuki",
+      "vehicle_type": "universal",
+      "external_id": "suzuki",
+      "is_active": true,
+      "models": [
+        { "name": "Nex II", "vehicle_type": "motor", "is_active": true },
+        { "name": "Address", "vehicle_type": "motor", "is_active": true },
+        { "name": "Avenis", "vehicle_type": "motor", "is_active": true },
+        { "name": "Burgman Street 125EX", "vehicle_type": "motor", "is_active": true },
+        { "name": "Satria F150", "vehicle_type": "motor", "is_active": true },
+        { "name": "GSX-R150", "vehicle_type": "motor", "is_active": true },
+        { "name": "GSX-S150", "vehicle_type": "motor", "is_active": true },
+        { "name": "S-Presso", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Ignis", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Baleno", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Ertiga", "vehicle_type": "mobil", "is_active": true },
+        { "name": "XL7", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Grand Vitara", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Carry Pick Up", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Jimny", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Kawasaki",
+      "vehicle_type": "motor",
+      "external_id": "kawasaki",
+      "is_active": true,
+      "models": [
+        { "name": "Ninja 250", "vehicle_type": "motor", "is_active": true },
+        { "name": "Ninja ZX-25R", "vehicle_type": "motor", "is_active": true },
+        { "name": "W175", "vehicle_type": "motor", "is_active": true },
+        { "name": "KLX 150", "vehicle_type": "motor", "is_active": true },
+        { "name": "D-Tracker 150", "vehicle_type": "motor", "is_active": true },
+        { "name": "Versys-X 250", "vehicle_type": "motor", "is_active": true },
+        { "name": "Z250", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "TVS",
+      "vehicle_type": "motor",
+      "external_id": "tvs",
+      "is_active": true,
+      "models": [
+        { "name": "Ntorq 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "Callisto 110", "vehicle_type": "motor", "is_active": true },
+        { "name": "Callisto 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "Rockz 125", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "Vespa",
+      "vehicle_type": "motor",
+      "external_id": "vespa",
+      "is_active": true,
+      "models": [
+        { "name": "LX 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "S 125", "vehicle_type": "motor", "is_active": true },
+        { "name": "Primavera", "vehicle_type": "motor", "is_active": true },
+        { "name": "Sprint", "vehicle_type": "motor", "is_active": true },
+        { "name": "GTS Super", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "Piaggio",
+      "vehicle_type": "motor",
+      "external_id": "piaggio",
+      "is_active": true,
+      "models": [
+        { "name": "Medley", "vehicle_type": "motor", "is_active": true },
+        { "name": "Beverly", "vehicle_type": "motor", "is_active": true },
+        { "name": "MP3", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "KTM",
+      "vehicle_type": "motor",
+      "external_id": "ktm",
+      "is_active": true,
+      "models": [
+        { "name": "Duke 200", "vehicle_type": "motor", "is_active": true },
+        { "name": "Duke 250", "vehicle_type": "motor", "is_active": true },
+        { "name": "RC 200", "vehicle_type": "motor", "is_active": true },
+        { "name": "RC 390", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "Royal Enfield",
+      "vehicle_type": "motor",
+      "external_id": "royal-enfield",
+      "is_active": true,
+      "models": [
+        { "name": "Classic 350", "vehicle_type": "motor", "is_active": true },
+        { "name": "Meteor 350", "vehicle_type": "motor", "is_active": true },
+        { "name": "Hunter 350", "vehicle_type": "motor", "is_active": true },
+        { "name": "Super Meteor 650", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "Harley-Davidson",
+      "vehicle_type": "motor",
+      "external_id": "harley-davidson",
+      "is_active": true,
+      "models": [
+        { "name": "Sportster S", "vehicle_type": "motor", "is_active": true },
+        { "name": "Street Bob", "vehicle_type": "motor", "is_active": true },
+        { "name": "Fat Bob", "vehicle_type": "motor", "is_active": true },
+        { "name": "Pan America 1250", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "Ducati",
+      "vehicle_type": "motor",
+      "external_id": "ducati",
+      "is_active": true,
+      "models": [
+        { "name": "Monster", "vehicle_type": "motor", "is_active": true },
+        { "name": "Panigale V2", "vehicle_type": "motor", "is_active": true },
+        { "name": "Multistrada V4", "vehicle_type": "motor", "is_active": true },
+        { "name": "Scrambler Icon", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "Triumph",
+      "vehicle_type": "motor",
+      "external_id": "triumph",
+      "is_active": true,
+      "models": [
+        { "name": "Speed 400", "vehicle_type": "motor", "is_active": true },
+        { "name": "Scrambler 400 X", "vehicle_type": "motor", "is_active": true },
+        { "name": "Street Triple RS", "vehicle_type": "motor", "is_active": true },
+        { "name": "Tiger 900", "vehicle_type": "motor", "is_active": true }
+      ]
+    },
+    {
+      "name": "BMW",
+      "vehicle_type": "universal",
+      "external_id": "bmw",
+      "is_active": true,
+      "models": [
+        { "name": "G310R", "vehicle_type": "motor", "is_active": true },
+        { "name": "G310GS", "vehicle_type": "motor", "is_active": true },
+        { "name": "F900R", "vehicle_type": "motor", "is_active": true },
+        { "name": "R1250GS", "vehicle_type": "motor", "is_active": true },
+        { "name": "C400X", "vehicle_type": "motor", "is_active": true },
+        { "name": "320i", "vehicle_type": "mobil", "is_active": true },
+        { "name": "330i", "vehicle_type": "mobil", "is_active": true },
+        { "name": "520i", "vehicle_type": "mobil", "is_active": true },
+        { "name": "X1", "vehicle_type": "mobil", "is_active": true },
+        { "name": "X3", "vehicle_type": "mobil", "is_active": true },
+        { "name": "X5", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Toyota",
+      "vehicle_type": "mobil",
+      "external_id": "toyota",
+      "is_active": true,
+      "models": [
+        { "name": "Agya", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Calya", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Avanza", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Veloz", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Raize", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Rush", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Yaris", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Yaris Cross", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Kijang Innova Zenix", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Fortuner", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Hilux", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Land Cruiser", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Camry", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Corolla Altis", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Daihatsu",
+      "vehicle_type": "mobil",
+      "external_id": "daihatsu",
+      "is_active": true,
+      "models": [
+        { "name": "Ayla", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Sigra", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Xenia", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Terios", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Rocky", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Gran Max PU", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Luxio", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Sirion", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Mitsubishi",
+      "vehicle_type": "mobil",
+      "external_id": "mitsubishi",
+      "is_active": true,
+      "models": [
+        { "name": "Xpander", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Xpander Cross", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Xforce", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Pajero Sport", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Triton", "vehicle_type": "mobil", "is_active": true },
+        { "name": "L300", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Nissan",
+      "vehicle_type": "mobil",
+      "external_id": "nissan",
+      "is_active": true,
+      "models": [
+        { "name": "March", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Livina", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Kicks e-Power", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Serena", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Terra", "vehicle_type": "mobil", "is_active": true },
+        { "name": "X-Trail", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Mazda",
+      "vehicle_type": "mobil",
+      "external_id": "mazda",
+      "is_active": true,
+      "models": [
+        { "name": "Mazda2", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Mazda3", "vehicle_type": "mobil", "is_active": true },
+        { "name": "CX-3", "vehicle_type": "mobil", "is_active": true },
+        { "name": "CX-30", "vehicle_type": "mobil", "is_active": true },
+        { "name": "CX-5", "vehicle_type": "mobil", "is_active": true },
+        { "name": "CX-8", "vehicle_type": "mobil", "is_active": true },
+        { "name": "MX-5", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Hyundai",
+      "vehicle_type": "mobil",
+      "external_id": "hyundai",
+      "is_active": true,
+      "models": [
+        { "name": "Stargazer", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Stargazer X", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Creta", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Kona Electric", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Ioniq 5", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Palisade", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Santa Fe", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Kia",
+      "vehicle_type": "mobil",
+      "external_id": "kia",
+      "is_active": true,
+      "models": [
+        { "name": "Sonet", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Seltos", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Carens", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Carnival", "vehicle_type": "mobil", "is_active": true },
+        { "name": "EV6", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Wuling",
+      "vehicle_type": "mobil",
+      "external_id": "wuling",
+      "is_active": true,
+      "models": [
+        { "name": "Air ev", "vehicle_type": "mobil", "is_active": true },
+        { "name": "BinguoEV", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Alvez", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Almaz", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Confero", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Formo", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "MG",
+      "vehicle_type": "mobil",
+      "external_id": "mg",
+      "is_active": true,
+      "models": [
+        { "name": "ZS", "vehicle_type": "mobil", "is_active": true },
+        { "name": "HS", "vehicle_type": "mobil", "is_active": true },
+        { "name": "4 EV", "vehicle_type": "mobil", "is_active": true },
+        { "name": "5 GT", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Chery",
+      "vehicle_type": "mobil",
+      "external_id": "chery",
+      "is_active": true,
+      "models": [
+        { "name": "Omoda 5", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Tiggo 5X", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Tiggo 7 Pro", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Tiggo 8 Pro", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "BYD",
+      "vehicle_type": "mobil",
+      "external_id": "byd",
+      "is_active": true,
+      "models": [
+        { "name": "Dolphin", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Atto 3", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Seal", "vehicle_type": "mobil", "is_active": true },
+        { "name": "M6", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "DFSK",
+      "vehicle_type": "mobil",
+      "external_id": "dfsk",
+      "is_active": true,
+      "models": [
+        { "name": "Glory 560", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Glory i-Auto", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Gelora E", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Isuzu",
+      "vehicle_type": "mobil",
+      "external_id": "isuzu",
+      "is_active": true,
+      "models": [
+        { "name": "D-Max", "vehicle_type": "mobil", "is_active": true },
+        { "name": "MU-X", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Traga", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Ford",
+      "vehicle_type": "mobil",
+      "external_id": "ford",
+      "is_active": true,
+      "models": [
+        { "name": "Ranger", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Everest", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Mustang", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Chevrolet",
+      "vehicle_type": "mobil",
+      "external_id": "chevrolet",
+      "is_active": true,
+      "models": [
+        { "name": "Spark", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Trailblazer", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Captiva", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Mercedes-Benz",
+      "vehicle_type": "mobil",
+      "external_id": "mercedes-benz",
+      "is_active": true,
+      "models": [
+        { "name": "A200", "vehicle_type": "mobil", "is_active": true },
+        { "name": "C200", "vehicle_type": "mobil", "is_active": true },
+        { "name": "E300", "vehicle_type": "mobil", "is_active": true },
+        { "name": "GLC200", "vehicle_type": "mobil", "is_active": true },
+        { "name": "GLE450", "vehicle_type": "mobil", "is_active": true },
+        { "name": "S450", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Audi",
+      "vehicle_type": "mobil",
+      "external_id": "audi",
+      "is_active": true,
+      "models": [
+        { "name": "A4", "vehicle_type": "mobil", "is_active": true },
+        { "name": "A6", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Q3", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Q5", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Lexus",
+      "vehicle_type": "mobil",
+      "external_id": "lexus",
+      "is_active": true,
+      "models": [
+        { "name": "UX 250h", "vehicle_type": "mobil", "is_active": true },
+        { "name": "NX 350h", "vehicle_type": "mobil", "is_active": true },
+        { "name": "RX 350h", "vehicle_type": "mobil", "is_active": true },
+        { "name": "LM 350h", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Volvo",
+      "vehicle_type": "mobil",
+      "external_id": "volvo",
+      "is_active": true,
+      "models": [
+        { "name": "XC40", "vehicle_type": "mobil", "is_active": true },
+        { "name": "XC60", "vehicle_type": "mobil", "is_active": true },
+        { "name": "XC90", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Tesla",
+      "vehicle_type": "mobil",
+      "external_id": "tesla",
+      "is_active": true,
+      "models": [
+        { "name": "Model 3", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Model Y", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Model S", "vehicle_type": "mobil", "is_active": true },
+        { "name": "Model X", "vehicle_type": "mobil", "is_active": true }
+      ]
+    },
+    {
+      "name": "Peugeot",
+      "vehicle_type": "mobil",
+      "external_id": "peugeot",
+      "is_active": true,
+      "models": [
+        { "name": "2008", "vehicle_type": "mobil", "is_active": true },
+        { "name": "3008", "vehicle_type": "mobil", "is_active": true },
+        { "name": "5008", "vehicle_type": "mobil", "is_active": true }
+      ]
+    }
+  ]
+}

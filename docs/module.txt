@@ -1,0 +1,111 @@
+Booking & antrian servis (pelanggan bisa pilih jadwal, cabang, dan keluhan awal).
+Estimasi biaya + approval digital sebelum pengerjaan (biar tidak ada sengketa biaya).
+Invoice + pembayaran + piutang end-to-end (status lunas/belum, jatuh tempo, reminder).
+Purchase Order sparepart + stok minimum/reorder alert ke supplier.
+Reminder servis berkala via WhatsApp/SMS berdasarkan km/waktu servis terakhir.
+Audit log aktivitas user (siapa ubah harga, stok, status order, dll).
+Transfer stok antar gudang/cabang dan histori mutasi stok detail.
+
+=== PRIORITAS FITUR AI ===
+1) AI Estimasi Biaya Servis + rekomendasi pekerjaan (prioritas utama).
+   Tujuan: mempercepat frontdesk, mempercepat approval customer, dan mengurangi sengketa biaya.
+2) AI Prediksi Reorder Sparepart (prioritas kedua).
+   Tujuan: menurunkan stok kosong dan overstock, serta memperbaiki cashflow.
+
+=== STRATEGI PROMPT AI (SAAS MULTI-TENANT) ===
+- Gunakan custom prompt model "semi-custom" (bukan bebas penuh).
+- Superadmin SaaS mengelola base/system prompt global (wajib, tidak bisa diubah tenant).
+- Tenant boleh mengatur override terbatas (gaya bahasa, preferensi sparepart, kebijakan estimasi, catatan tambahan).
+- Hindari tenant full custom prompt pada fase awal.
+- Urutan komposisi prompt: system global -> prompt fitur -> setting tenant -> input user.
+
+=== SPEC V1 - AI ESTIMASI BIAYA SERVIS (PRIORITAS UTAMA) ===
+Tujuan utama:
+- Mempercepat proses frontdesk saat menerima kendaraan.
+- Memberi draft estimasi biaya yang konsisten dan transparan.
+- Mempercepat approval customer sebelum pengerjaan.
+- Mengurangi komplain/sengketa biaya setelah pekerjaan selesai.
+
+Ruang lingkup V1:
+- AI menghasilkan draft estimasi (bukan keputusan final otomatis).
+- Service Advisor wajib review/edit sebelum dikirim ke customer.
+- Hasil AI mencakup rekomendasi pekerjaan, sparepart, estimasi biaya, dan estimasi durasi.
+
+Input minimum ke AI:
+- Data kendaraan: merk, model, tahun, tipe mesin, transmisi.
+- Data customer: keluhan awal, km terakhir, gejala tambahan.
+- Riwayat servis: 3-5 servis terakhir dan penggantian sparepart sebelumnya.
+- Data cabang: harga jasa aktif, harga sparepart aktif, stok sparepart.
+- Konteks pekerjaan: tipe booking (ringan/berat), waktu kedatangan, catatan frontdesk.
+
+Output yang wajib dihasilkan AI:
+- Daftar rekomendasi pekerjaan (service item) + alasan singkat.
+- Daftar sparepart yang kemungkinan dibutuhkan.
+- Estimasi biaya per item:
+  - biaya jasa
+  - biaya sparepart
+  - subtotal
+- Estimasi total biaya (range minimum-maksimum).
+- Estimasi durasi pengerjaan (menit/jam).
+- Level keyakinan (confidence) per rekomendasi.
+- Catatan risiko/ketidakpastian (contoh: perlu inspeksi fisik lebih lanjut).
+
+Aturan guardrail:
+- Tampilkan label jelas: "Hasil AI adalah estimasi awal, final setelah inspeksi teknisi."
+- Jika confidence rendah, AI wajib menyarankan inspeksi tambahan (bukan memaksa estimasi pasti).
+- AI tidak boleh melewati approval manual dari Service Advisor.
+- Semua output AI disimpan sebagai audit trail (siapa generate, kapan, hasilnya apa).
+
+KPI keberhasilan V1:
+- Waktu pembuatan estimasi turun (target awal: <= 3 menit dari check-in).
+- Rasio approval estimasi meningkat.
+- Selisih estimasi vs realisasi biaya menurun.
+- Jumlah sengketa biaya per bulan menurun.
+
+=== DESAIN PROMPT MULTI-TENANT (SEMI-CUSTOM) ===
+Prinsip:
+- Tenant boleh menyesuaikan gaya dan aturan bisnis ringan.
+- Tenant tidak boleh mengubah aturan inti keamanan, format output, dan batasan sistem.
+
+Lapisan prompt:
+1) System Prompt Global (Superadmin SaaS)
+   - Berisi aturan wajib: format output, larangan halusinasi, batasan keputusan, bahasa default, safety.
+2) Prompt Fitur (AI Estimasi Servis)
+   - Berisi instruksi domain bengkel: cara menyusun item pekerjaan, struktur biaya, confidence, disclaimer.
+3) Tenant Override Terbatas
+   - Berisi preferensi tenant:
+     - tone komunikasi (formal/santai)
+     - prioritas merek sparepart
+     - kebijakan estimasi internal
+     - catatan tambahan operasional
+4) User Input Runtime
+   - Data transaksi real-time dari form booking/frontdesk.
+
+Field override tenant yang direkomendasikan (terstruktur):
+- communication_tone: formal | semi_formal | santai
+- preferred_sparepart_brands: array string
+- estimation_policy_notes: text pendek
+- labor_rounding_rule: enum (up/down/nearest)
+- additional_constraints: text pendek
+
+Yang tidak boleh dioverride tenant:
+- Format output JSON/struktur respons.
+- Aturan disclaimer wajib ke customer.
+- Aturan keamanan dan kepatuhan sistem.
+- Batasan agar AI tidak memberi keputusan final tanpa review manusia.
+
+=== RENCANA IMPLEMENTASI SINGKAT ===
+Tahap 1:
+- Siapkan konfigurasi prompt global (superadmin) + override tenant terstruktur.
+- Siapkan endpoint/action generate estimasi AI.
+- Simpan hasil generate ke log untuk audit.
+
+Tahap 2:
+- Integrasi di halaman frontdesk/booking:
+  - tombol "Generate Estimasi AI"
+  - panel hasil rekomendasi
+  - edit manual sebelum approval customer
+
+Tahap 3:
+- Monitoring KPI dan evaluasi akurasi estimasi.
+- Iterasi prompt fitur dan aturan tenant override berdasarkan data real.
